@@ -40,7 +40,13 @@
       </v-row>
       <v-row class="d-flex justify-center">
         <v-col cols="12" sm="6" md="4" class="text-center">
-          <v-btn color="blue darken-4" dark large>ADD</v-btn>
+          <v-btn
+            @click.prevent="addTransaction"
+            color="blue darken-4"
+            dark
+            large
+            >ADD</v-btn
+          >
         </v-col>
       </v-row>
     </v-container>
@@ -58,6 +64,11 @@ export default {
         type: "credit",
         description: "",
         amount: ""
+      },
+      methods: {
+        addTransaction: function() {
+          this.$store.dispatch("addTransaction", this.form);
+        }
       }
     };
   }
