@@ -20,6 +20,16 @@
       </v-row>
       <v-row class="d-flex justify-center">
         <v-col cols="12" sm="6" md="4">
+          <template v-if="errors">
+            <ul>
+              <li v-for="error in errors" v-bind:key="error">- {{ error }}</li>
+            </ul>
+          </template>
+        </v-col>
+      </v-row>
+
+      <v-row class="d-flex justify-center">
+        <v-col cols="12" sm="6" md="4">
           <v-text-field
             v-model="form.description"
             label="Description"
@@ -60,15 +70,35 @@ export default {
       checkbox: true,
       switch1: true,
       form: {
-        type: "credit",
+        type: "debit",
         description: "",
         amount: ""
       },
+      errors: []
     };
   },
   methods: {
     addTransaction: function() {
+      if (!this.validForm()) {
+        return;
+      }
       this.$store.dispatch("addTransaction", this.form);
+
+      this.$router.push({ path: '/transactions' });
+    },
+    validForm: function() {
+
+      this.errors = [];
+
+      if (!this.form.description) {
+        this.errors.push("Description is required");
+      }
+
+      if (!this.form.amount) {
+        this.errors.push("Amount is required");
+      }
+
+      return this.errors.length ? false : true;
     }
   }
 };
