@@ -1,19 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import TransactionsCreate from '../views/transactions/create';
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  }
-];
-
 const router = new VueRouter({
-  routes
+  routes: [
+    { path: '/transactions/create', component: TransactionsCreate }
+  ]
 });
 
 export default router;
