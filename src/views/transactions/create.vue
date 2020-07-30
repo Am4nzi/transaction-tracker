@@ -29,9 +29,12 @@
       </v-row>
       <v-row class="d-flex justify-center">
         <v-col cols="12" sm="6" md="4">
-          <v-text-field label="Amount" placeholder="$" outlined
-            ></v-text-field
-          >
+          <v-text-field label="Amount" placeholder="$" outlined></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row class="d-flex justify-center">
+        <v-col cols="12" sm="6" md="4" class="text-center" >
+            <v-btn color="blue darken-4" dark large>ADD</v-btn>
         </v-col>
       </v-row>
     </v-container>
