@@ -5,7 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    transactions: []
+    transactions: [
+      { type: 'debit', description: 'Vue Class', amount: 4500 },
+      { type: 'credit', description: 'Payroll', amount: 100000 },
+    ]
+  },
+  getters: {
+    getTransactions: function (state) {
+      return state.transactions;
+    }
   },
   mutations: {
     addTransaction: function(state, transaction) {

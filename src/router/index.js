@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: [
-    { path: '/transactions/create', component: TransactionsIndex },
+    { path: '/transactions', component: TransactionsIndex },
     { path: '/transactions/create', component: TransactionsCreate }
   ]
 });
