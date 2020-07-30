@@ -82,12 +82,14 @@ export default {
       if (!this.validForm()) {
         return;
       }
+
+      this.form.amount *= 100;
+
       this.$store.dispatch("addTransaction", this.form);
 
-      this.$router.push({ path: '/transactions' });
+      this.$router.push({ path: "/transactions" });
     },
     validForm: function() {
-
       this.errors = [];
 
       if (!this.form.description) {

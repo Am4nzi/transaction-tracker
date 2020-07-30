@@ -8,30 +8,39 @@
 </template>
 
 <script>
+import Vue from "vue";
 import Navigation from "./components/Navigation";
+import money from "./mixins/money";
+
+Vue.mixin(money);
+
 export default {
   name: "App",
-
+  mixins: [money],
   components: {
     Navigation
   },
 
   data: () => ({
     //
-  })
+  }),
+
+  mounted() {
+    // console.log(Money.formatMoney);
+  }
 };
 </script>
 
 <style>
-  * {
-    font-family: 'Poppins', sans-serif;
-  }
+* {
+  font-family: "Poppins", sans-serif;
+}
 
-  h1 {
-    color: #444;
-  }
+h1 {
+  color: #444;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 </style>
