@@ -5,22 +5,23 @@
       <v-row class="d-flex justify-center">
         <v-radio-group row v-model="radioGroup" class="toggle-switch">
           <v-radio
-            v-bind:class="{ checked: radioGroup === 'radio-1' }"
+            v-bind:class="{ checked: radioGroup === 'debit' }"
             class="radio-input ma-0 white--text"
             label="Debit"
-            value="radio-1"
+            value="debit"
           ></v-radio>
           <v-radio
-            v-bind:class="{ checked: radioGroup === 'radio-2' }"
+            v-bind:class="{ checked: radioGroup === 'credit' }"
             class="radio-input ma-0"
             label="Credit"
-            value="radio-2"
+            value="credit"
           ></v-radio>
         </v-radio-group>
       </v-row>
       <v-row class="d-flex justify-center">
         <v-col cols="12" sm="6" md="4">
           <v-text-field
+            v-model="form.description"
             label="Description"
             placeholder="Enter your description"
             outlined
@@ -29,12 +30,17 @@
       </v-row>
       <v-row class="d-flex justify-center">
         <v-col cols="12" sm="6" md="4">
-          <v-text-field label="Amount" placeholder="$" outlined></v-text-field>
+          <v-text-field
+            v-model="form.amount"
+            label="Amount"
+            placeholder="$"
+            outlined
+          ></v-text-field>
         </v-col>
       </v-row>
       <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="6" md="4" class="text-center" >
-            <v-btn color="blue darken-4" dark large>ADD</v-btn>
+        <v-col cols="12" sm="6" md="4" class="text-center">
+          <v-btn color="blue darken-4" dark large>ADD</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -47,7 +53,12 @@ export default {
     return {
       checkbox: true,
       radioGroup: 1,
-      switch1: true
+      switch1: true,
+      form: {
+        type: "credit",
+        description: "",
+        amount: ""
+      }
     };
   }
 };
@@ -69,8 +80,8 @@ export default {
 }
 
 .checked {
-  color: red !important;
   box-shadow: none;
+  background-color: #dcecf4;
 }
 
 .radio-input:first-of-type {
