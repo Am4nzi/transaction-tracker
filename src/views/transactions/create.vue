@@ -3,15 +3,15 @@
     <h1 class="text-center mt-4">Add Transaction</h1>
     <v-container fluid>
       <v-row class="d-flex justify-center">
-        <v-radio-group row v-model="radioGroup" class="toggle-switch">
+        <v-radio-group row v-model="form.type" class="toggle-switch">
           <v-radio
-            v-bind:class="{ checked: radioGroup === 'debit' }"
+            v-bind:class="{ checked: form.type === 'debit' }"
             class="radio-input ma-0 white--text"
             label="Debit"
             value="debit"
           ></v-radio>
           <v-radio
-            v-bind:class="{ checked: radioGroup === 'credit' }"
+            v-bind:class="{ checked: form.type === 'credit' }"
             class="radio-input ma-0"
             label="Credit"
             value="credit"
@@ -58,19 +58,18 @@ export default {
   data() {
     return {
       checkbox: true,
-      radioGroup: 1,
       switch1: true,
       form: {
         type: "credit",
         description: "",
         amount: ""
       },
-      methods: {
-        addTransaction: function() {
-          this.$store.dispatch("addTransaction", this.form);
-        }
-      }
     };
+  },
+  methods: {
+    addTransaction: function() {
+      this.$store.dispatch("addTransaction", this.form);
+    }
   }
 };
 </script>
