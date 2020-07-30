@@ -13,6 +13,21 @@ export default new Vuex.Store({
   getters: {
     getTransactions: function (state) {
       return state.transactions;
+    },
+    getTotal: function (state) {
+      let balance = 0;
+
+      if (state.transactions.length) {
+        state.transactions.forEach(transaction => {
+          if (transaction.type === 'credit') {
+            balance += transaction.amount;
+          } else {
+            balance -= transaction.amount;
+          }
+        });
+      }
+
+      return balance;
     }
   },
   mutations: {

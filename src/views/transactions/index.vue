@@ -16,16 +16,21 @@
           <template v-for="(transaction, index) in getTransactions">
             <v-list-item :key="index">
               <template v-slot>
-                <v-list-item-content>
-                  <v-list-item-title
-                    v-text="transaction.type"
-                  ></v-list-item-title>
-                  <v-list-item-subtitle
-                    class="text--primary"
-                    v-text="transaction.description.substring(0, 20)"
-                  ></v-list-item-subtitle>
+                <v-list-item-icon>
+                  <v-icon
+                    v-if="transaction.type === 'credit'"
+                    class="green--text"
+                    >$vuetify.icons.plus</v-icon
+                  >
+                  <v-icon v-else class="red--text">$vuetify.icons.minus</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content class="mb-4">
+                  <v-list-item-title>{{
+                    transaction.description.substring(0, 20)
+                  }}</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-action-text
+                  class="mb-4"
                   v-text="formatMoney(transaction.amount)"
                 ></v-list-item-action-text>
               </template>
