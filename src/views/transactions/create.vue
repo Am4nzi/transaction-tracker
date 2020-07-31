@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @keyup.enter="addTransaction">
     <h1 class="text-center mt-4">Add Transaction</h1>
     <v-container fluid>
       <v-row class="d-flex justify-center">
