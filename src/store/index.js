@@ -6,8 +6,11 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     transactions: [
-      { type: 'debit', description: 'Vue Class', amount: 4500 },
+      { type: 'debit', description: 'Eating Out', amount: 3500 },
+      { type: 'debit', description: 'Weekly City Transport', amount: 7500 },
       { type: 'credit', description: 'Payroll', amount: 100000 },
+      { type: 'debit', description: 'Airplane Tickets', amount: 38700 },
+      { type: 'credit', description: 'Freelance Project', amount: 300000 },
     ]
   },
   getters: {
