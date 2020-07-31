@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="light-blue darken-3" dark>
+  <v-app-bar app color="#15233f" dark cols="12" sm="8" md="4" lg="8" xl="4">
     <router-link to="/transactions" class="white--text"
       >Transaction</router-link
     >
