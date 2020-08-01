@@ -1,6 +1,6 @@
 <template>
   <div @keyup.enter="addTransaction">
-    <h1 class="text-center mt-4">Add Transaction</h1>
+    <h1 class="text-center">Add Transaction</h1>
     <v-container fluid>
       <v-row class="d-flex justify-center">
         <v-radio-group row v-model="form.type">
