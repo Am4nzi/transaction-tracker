@@ -1,5 +1,5 @@
 <template>
-  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
+  <v-app :style="{ background: $vuetify.theme.themes[theme].background }">
     <Navigation />
     <v-main>
       <TotalBar />
@@ -11,7 +11,7 @@
 <script>
 import Vue from "vue";
 import Navigation from "./components/Navigation";
-import TotalBar from './components/TotalBar';
+import TotalBar from "./components/TotalBar";
 import money from "./mixins/money";
 
 Vue.mixin(money);
@@ -30,7 +30,7 @@ export default {
 
   computed: {
     theme() {
-      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+      return this.$vuetify.theme.dark ? "dark" : "light";
     }
   }
 };
@@ -42,7 +42,9 @@ export default {
 }
 
 h1 {
-  color: #444;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 h2 {

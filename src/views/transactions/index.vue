@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="flex flex-col items-center">
-      <h1 class="text-center">My Transactions</h1>
+      <h1 class="text-center primary--text">My Transactions</h1>
     </div>
 
-    <v-card max-width="500" class="mx-auto mt-8">
-      <v-list two-line>
+    <v-card outlined max-width="500" class="mx-auto mt-8 pb-3">
+      <v-list two-line disabled>
         <v-list-item-group
           v-model="selected"
           multiple
@@ -23,12 +23,18 @@
                   <v-icon v-else class="red--text">$vuetify.icons.minus</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content class="mb-4">
-                  <v-list-item-title>{{
-                    transaction.description.substring(0, 20)
+                  <v-list-item-title class="primary--text">{{
+                    transaction.description.substring(0, 25)
                   }}</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-action-text
-                  class="mb-4"
+                  v-if="transaction.type === 'credit'"
+                  class="mb-4 text-subtitle-2 green--text"
+                  v-text="formatMoney(transaction.amount)"
+                ></v-list-item-action-text>
+                <v-list-item-action-text
+                  v-else
+                  class="mb-4 text-subtitle-2 red--text"
                   v-text="formatMoney(transaction.amount)"
                 ></v-list-item-action-text>
               </template>
