@@ -61,14 +61,3 @@ module.exports = {
   }
 };
 </script>
-
-<style>
-.transaction {
-  display: flex;
-  justify-content: space-between;
-  width: 20em;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-</style>
