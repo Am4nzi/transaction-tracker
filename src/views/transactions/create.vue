@@ -3,7 +3,7 @@
     <h1 class="text-center">Add Transaction</h1>
     <v-container fluid>
       <v-row class="d-flex justify-center">
-        <v-radio-group row v-model="form.type">
+        <v-radio-group row v-model="form.type" class="mt-1">
           <v-radio
             label="Debit"
             value="debit"
@@ -14,9 +14,10 @@
           ></v-radio>
         </v-radio-group>
       </v-row>
-      <v-row class="d-flex justify-center">
+
+      <v-row v-if="errors" class="d-flex justify-center mt-n6">
         <v-col cols="12" sm="6" md="4">
-          <template v-if="errors">
+          <template>
             <ul>
               <li v-for="error in errors" v-bind:key="error">- {{ error }}</li>
             </ul>
@@ -25,7 +26,7 @@
       </v-row>
 
       <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="6" md="4">
+        <v-col cols="12" sm="6" md="4" class="pb-0">
           <v-text-field
             v-model="form.description"
             label="Description"
@@ -35,7 +36,7 @@
         </v-col>
       </v-row>
       <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="6" md="4">
+        <v-col cols="12" sm="6" md="4" class="pb-0">
           <v-text-field
             v-model="form.amount"
             label="Amount"
