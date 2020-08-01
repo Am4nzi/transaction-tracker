@@ -1,22 +1,16 @@
 <template>
   <div @keyup.enter="addTransaction">
-    <h1 class="text-center">Add Transaction</h1>
+    <h1 class="text-center primary--text">Add Transaction</h1>
     <v-container fluid>
       <v-row class="d-flex justify-center">
         <v-radio-group row v-model="form.type" class="mt-1">
-          <v-radio
-            label="Debit"
-            value="debit"
-          ></v-radio>
-          <v-radio
-            label="Credit"
-            value="credit"
-          ></v-radio>
+          <v-radio label="Debit" value="debit"></v-radio>
+          <v-radio label="Credit" value="credit"></v-radio>
         </v-radio-group>
       </v-row>
 
       <v-row v-if="errors" class="d-flex justify-center mt-n6">
-        <v-col cols="12" sm="6" md="4">
+        <v-col cols="12" sm="6" md="6">
           <template>
             <ul>
               <li v-for="error in errors" v-bind:key="error">- {{ error }}</li>
@@ -26,8 +20,9 @@
       </v-row>
 
       <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="6" md="4" class="pb-0">
+        <v-col cols="12" sm="8" md="6" lg="5" class="pb-0">
           <v-text-field
+            class="custom-label-color"
             v-model="form.description"
             label="Description"
             placeholder="Enter your description"
@@ -36,8 +31,9 @@
         </v-col>
       </v-row>
       <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="6" md="4" class="pb-0">
+        <v-col cols="12" sm="8" md="6" lg="5" class="pb-0">
           <v-text-field
+            class="custom-label-color"
             v-model="form.amount"
             label="Amount"
             placeholder="$"
@@ -105,9 +101,8 @@ export default {
 </script>
 
 <style>
-.add-transaction-button {
-  font-family: sofia-pro, sans-serif;
-  font-weight: 600;
-  font-style: normal;
+.custom-label-color .v-label {
+  color: #1d154a !important;
+  opacity: 1;
 }
 </style>
