@@ -9,12 +9,17 @@
         </v-radio-group>
       </v-row>
 
-      <v-row v-if="errors" class="d-flex justify-center mt-n6">
-        <v-col cols="12" sm="6" md="6">
+      <v-row v-if="errors" class="d-flex justify-center">
+        <v-col cols="10" sm="6" md="4" lg="3" >
           <template>
-            <ul>
-              <li v-for="error in errors" v-bind:key="error">- {{ error }}</li>
-            </ul>
+            <v-alert
+              v-for="error in errors"
+              v-bind:key="error"
+              dense
+              type="error"
+            >
+              {{ error }}
+            </v-alert>
           </template>
         </v-col>
       </v-row>
