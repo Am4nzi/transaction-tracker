@@ -11,12 +11,12 @@
       <v-list>
         <router-link to="/transactions">
           <v-list-item>
-            <v-list-item-title>View Transactions</v-list-item-title>
+            <v-list-item-title class="primary--text">View Transactions</v-list-item-title>
           </v-list-item>
         </router-link>
           <router-link to="/transactions/create">
               <v-list-item>
-                  <v-list-item-title>Add Transactions</v-list-item-title>
+                  <v-list-item-title class="primary--text">Add Transactions</v-list-item-title>
               </v-list-item>
           </router-link>
       </v-list>
