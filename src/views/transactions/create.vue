@@ -3,16 +3,12 @@
     <h1 class="text-center mt-4">Add Transaction</h1>
     <v-container fluid>
       <v-row class="d-flex justify-center">
-        <v-radio-group row v-model="form.type" class="toggle-switch">
+        <v-radio-group row v-model="form.type">
           <v-radio
-            v-bind:class="{ checked: form.type === 'debit' }"
-            class="radio-input ma-0 white--text"
             label="Debit"
             value="debit"
           ></v-radio>
           <v-radio
-            v-bind:class="{ checked: form.type === 'credit' }"
-            class="radio-input ma-0"
             label="Credit"
             value="credit"
           ></v-radio>
@@ -51,8 +47,9 @@
       <v-row class="d-flex justify-center">
         <v-col cols="12" sm="6" md="4" class="text-center">
           <v-btn
+            class="add-transaction-button"
             @click.prevent="addTransaction"
-            color="blue darken-4"
+            color="primary"
             dark
             large
             >ADD</v-btn
@@ -107,30 +104,9 @@ export default {
 </script>
 
 <style>
-.radio-input {
-  background-color: #ebf8ff;
-  color: white !important;
-  font-size: 14px;
-  line-height: 1;
-  text-align: center;
-  padding: 1.2em 1.6em;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: all 0.1s ease-in-out;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-}
-
-.checked {
-  box-shadow: none;
-  background-color: #dcecf4;
-}
-
-.radio-input:first-of-type {
-  border-radius: 10px 0 0 10px;
-}
-
-.radio-input:last-of-type {
-  border-radius: 0 10px 10px 0;
+.add-transaction-button {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 </style>
