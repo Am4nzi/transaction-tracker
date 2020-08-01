@@ -5,7 +5,6 @@
     </div>
 
     <v-card max-width="500" class="mx-auto mt-8">
-
       <v-list two-line>
         <v-list-item-group
           v-model="selected"
@@ -37,15 +36,11 @@
           </template>
         </v-list-item-group>
       </v-list>
-      <v-btn
-              absolute
-              dark
-              fab
-              bottom
-              right
-              color="primary"
-      >
-        <v-icon>mdi-plus</v-icon>
+
+      <v-btn absolute dark fab bottom right color="primary">
+        <router-link to="/transactions/create" class="white--text"
+          ><v-icon>mdi-plus</v-icon></router-link
+        >
       </v-btn>
     </v-card>
   </div>

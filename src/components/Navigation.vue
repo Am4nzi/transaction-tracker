@@ -19,10 +19,5 @@
       </svg>
     </router-link>
     <v-spacer></v-spacer>
-    <v-btn target="_blank" text>
-      <router-link to="/transactions/create" class="white--text"
-        >+ Add</router-link
-      >
-    </v-btn>
   </v-app-bar>
 </template>
