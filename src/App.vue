@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
     <Navigation />
     <v-main>
       <TotalBar />
@@ -28,8 +28,10 @@ export default {
     //
   }),
 
-  mounted() {
-    // console.log(Money.formatMoney);
+  computed: {
+    theme() {
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+    }
   }
 };
 </script>

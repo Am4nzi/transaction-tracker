@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col items-center">
-      <h1 class="text-center mt-8">My Transactions</h1>
+      <h1 class="text-center">My Transactions</h1>
     </div>
 
     <v-card max-width="500" class="mx-auto mt-8">
@@ -43,7 +43,7 @@
               fab
               bottom
               right
-              color="#15233f"
+              color="primary"
       >
         <v-icon>mdi-plus</v-icon>
       </v-btn>
