@@ -89,9 +89,10 @@ module.exports = {
 </script>
 
 <style>
-  /* Below rules added due to this Vuetify bug https://github.com/vuetifyjs/vuetify/issues/2178 */
-.v-icon:hover:before {
-  color: rgba(0, 0, 0, 0.54) !important;
+/* Below rules added due to this Vuetify bug https://github.com/vuetifyjs/vuetify/issues/2178 */
+
+v.icon {
+  z-index: 100;
 }
 
 .v-icon:after {
@@ -99,4 +100,26 @@ module.exports = {
   background-color: transparent !important;
 }
 
+.theme--light.v-list-item:hover::before {
+  opacity: 0 !important;
+}
+
+.v-list-item--link:before {
+  background-color: transparent !important;
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+@media only screen and (max-width: 600px) {
+  .v-icon:hover:before {
+    color: rgba(0, 0, 0, 0.54) !important;
+  }
+}
 </style>
