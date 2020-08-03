@@ -25,8 +25,30 @@ export default {
   },
 
   data: () => ({
-    //
+    dummyTransactionData: {
+      first: {
+        type: "debit",
+        description: "Eating Out",
+        amount: 3500
+      },
+      second: {
+        type: "debit",
+        description: "Weekly City Transport",
+        amount: 7500
+      },
+      third: {
+        type: "credit",
+        description: "Payroll",
+        amount: 100000
+      },
+    }
   }),
+
+  mounted() {
+    for (const transaction in this.dummyTransactionData) {
+      this.$store.dispatch("addTransaction", this.dummyTransactionData[transaction]);
+    }
+  },
 
   computed: {
     theme() {

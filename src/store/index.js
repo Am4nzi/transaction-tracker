@@ -6,9 +6,6 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     transactions: [
-      { type: "debit", description: "Eating Out", amount: 3500 },
-      { type: "debit", description: "Weekly City Transport", amount: 7500 },
-      { type: "credit", description: "Payroll", amount: 100000 }
     ]
   },
   getters: {
