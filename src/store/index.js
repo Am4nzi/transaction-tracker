@@ -6,21 +6,21 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     transactions: [
-      { type: 'debit', description: 'Eating Out', amount: 3500 },
-      { type: 'debit', description: 'Weekly City Transport', amount: 7500 },
-      { type: 'credit', description: 'Payroll', amount: 100000 },
+      { type: "debit", description: "Eating Out", amount: 3500 },
+      { type: "debit", description: "Weekly City Transport", amount: 7500 },
+      { type: "credit", description: "Payroll", amount: 100000 }
     ]
   },
   getters: {
-    getTransactions: function (state) {
+    getTransactions: function(state) {
       return state.transactions;
     },
-    getTotal: function (state) {
+    getTotal: function(state) {
       let balance = 0;
 
       if (state.transactions.length) {
         state.transactions.forEach(transaction => {
-          if (transaction.type === 'credit') {
+          if (transaction.type === "credit") {
             balance += transaction.amount;
           } else {
             balance -= transaction.amount;
@@ -33,15 +33,18 @@ export default new Vuex.Store({
   },
   mutations: {
     addTransaction: function(state, transaction) {
-      state.transactions.unshift(
-          JSON.parse(JSON.stringify(transaction))
-      );
-      console.log(state.transactions);
+      state.transactions.unshift(JSON.parse(JSON.stringify(transaction)));
+    },
+    removeTransaction: function(state, index) {
+      state.transactions.splice(index, 1);
     }
   },
   actions: {
     addTransaction: function(context, transaction) {
       context.commit("addTransaction", transaction);
+    },
+    removeTransaction: function(context, index) {
+      context.commit("removeTransaction", index);
     }
   },
   modules: {}

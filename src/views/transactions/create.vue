@@ -10,7 +10,7 @@
       </v-row>
 
       <v-row v-if="errors" class="d-flex justify-center">
-        <v-col cols="10" sm="6" md="4" lg="3" >
+        <v-col cols="10" sm="6" md="4" lg="3">
           <template>
             <v-alert
               v-for="error in errors"
@@ -25,7 +25,7 @@
       </v-row>
 
       <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="8" md="6" lg="5" class="pb-0">
+        <v-col cols="12" sm="8" md="6" lg="5" xl="4" class="pb-0">
           <v-text-field
             class="custom-label-color"
             v-model="form.description"
@@ -36,7 +36,7 @@
         </v-col>
       </v-row>
       <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="8" md="6" lg="5" class="pb-0">
+        <v-col cols="12" sm="8" md="6" lg="5" xl="4" class="pb-0">
           <v-text-field
             class="custom-label-color"
             v-model="form.amount"
