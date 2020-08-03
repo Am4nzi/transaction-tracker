@@ -89,6 +89,7 @@ module.exports = {
 </script>
 
 <style>
+  /* Below rules added due to this Vuetify bug https://github.com/vuetifyjs/vuetify/issues/2178 */
 .v-icon:hover:before {
   color: rgba(0, 0, 0, 0.54) !important;
 }
